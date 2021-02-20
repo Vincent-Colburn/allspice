@@ -56,11 +56,11 @@ namespace allspice.Repositories
         internal Ingredient Edit(Ingredient update)
         {
             string sql = @"
-      UPDATE FROM ingredients
+      UPDATE ingredients
       SET
        amount = @Amount,
-       name = @Name,
-      WHERE id = @Id";
+       name = @Name
+      WHERE id = @Id;";
             _db.Execute(sql, update);
             return update;
         }

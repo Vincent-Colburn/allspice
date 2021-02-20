@@ -44,11 +44,11 @@ namespace allspice.Repositories
         internal Recipe Edit(Recipe update)
         {
             string sql = @"
-      UPDATE FROM recipes
+      UPDATE recipes
       SET
        description = @Description,
-       name = @Name,
-      WHERE id = @Id";
+       name = @Name
+      WHERE id = @Id;";
             _db.Execute(sql, update);
             return update;
         }
